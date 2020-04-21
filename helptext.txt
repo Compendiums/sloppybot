@@ -1,0 +1,5 @@
+Sloppy's here to help:
+
+!help - get a list of sloppy commands
+!version - learn about my recent changes
+!sloppytoppy - get the stats on team Sloppy Toppy. Dreaming of that 50% win rate!

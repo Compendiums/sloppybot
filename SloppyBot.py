@@ -1,4 +1,4 @@
-from Settings import DISCORD_KEY, URL, VERSION, REGION, QUEUE_ID, API_KEY, TEAM
+from Settings import DISCORD_KEY, RIOT_API_KEY, PATHS, URL, VERSION, REGION, QUEUE_ID, TEAM
 import requests
 import time
 import discord
@@ -19,12 +19,16 @@ class MatchGrabber:
             #take everything, put it in a request, output results readibly(maybe another function)
             response = request.get(URL['base'].format+URL['summoner_by_name'].format(VER=VERSION['summoner'],summonername='compendium')'''
 
+def readText(path):
+    text = open(path,'r')
+    return text.read()
+
 def request(region,url,version,keyname,queryval):
     #should add error handling based on the queryval data type and request response code
     #print(URL['base'].format(REGION=REGION[region]) +
     #URL[url].format(VER=VERSION[version], queryval=queryval))
 
-    args = {"api_key": API_KEY[keyname]}
+    args = {"api_key": RIOT_API_KEY}
     response = requests.get(URL['base'].format(REGION=REGION[region])+
                             URL[url].format(VER=VERSION[version],queryval=queryval),params=args)
 
@@ -129,7 +133,7 @@ def formatter(team_dict={}):
     for player in players_dict:
         members += '**{name}**     {position}\n'.format(name=player['summonerId'],position=player['position'])
 
-    winrate = '**winrate**: '+team_dict['winrate']
+    winrate = '**win rate**: '+team_dict['winrate']
 
     #print(members)
     #print(seperator)
@@ -141,10 +145,6 @@ def formatter(team_dict={}):
 
     for date,winloss in matches_dict.items():
         matches += '{date}     {winloss}\n'.format(date=date,winloss=winloss)
-
-    #print(matches)
-    #print(seperator)
-    mpv = 'MPV: '
 
     final_text = heading+seperator+members+seperator+winrate+seperator+matches_heading+matches
     print(final_text)
@@ -160,6 +160,13 @@ async def on_message(message):
         sloppydata = matchInfo()
         msg = formatter(sloppydata)
         await message.channel.send(msg)
+    if message.content.startswith('!help'):
+        msg = readText(PATHS['help'])
+        await message.channel.send(msg)
+    if message.content.startswith('!version'):
+        msg = readText(PATHS['version'])
+        await message.channel.send(msg)
+
 
 @client.event
 async def on_ready():
@@ -168,7 +175,7 @@ async def on_ready():
 
 if __name__ == '__main__':
 
-    client.run(DISCORD_KEY['compendium'])
+    client.run(DISCORD_KEY)
 
 
 
