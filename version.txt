@@ -5,6 +5,8 @@
 **What's coming for the future:**
 -add asynchronous processing to improve performance of multiple commands
 -speed up !sloppytoppy command
+-error handling
+-improve formatting of !sloppytoppy output
 -add command which accepts requests for new commands
 -add command to get a rundown of opposing team
 -add more functionality (not sure what yet)
