@@ -1,4 +1,4 @@
-#sloppybot_v2.0.pys
+#sloppybot.py
 from settings import DISCORD_KEY, PATHS, TEAM
 from discord.ext import commands
 import riotAPI
