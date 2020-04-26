@@ -1,7 +1,8 @@
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 DISCORD_KEY = os.getenv('DISCORD_KEY')
-
 RIOT_API_KEY = os.getenv('RIOT_API_KEY')
 
 WORKING_DIR = os.getcwd()
