@@ -1,14 +1,15 @@
-**Version 1.1:**
--Polished !sloppytoppy - Win rate is two words apparently
--added the !help and !version commands
+**Version 2.0:**
+-sloppybot got a complete back end renovation:
+    -now defined as a bot rather than client
+    -!help now uses built in bot help functionality
+    -fully utilizes the asynchronous processing
+-sloppybot got a new server with quadruple the specs
 
 **What's coming for the future:**
--add asynchronous processing to improve performance of multiple commands
 -speed up !sloppytoppy command
--error handling
+-error handling (Riot's APIs have been failing a lot recently :/)
 -improve formatting of !sloppytoppy output
--add command which accepts requests for new commands
 -add command to get a rundown of opposing team
--add more functionality (not sure what yet)
+-add command which accepts requests for new commands
 
 Hit me up with any command requests
