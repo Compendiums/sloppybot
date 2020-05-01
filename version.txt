@@ -1,4 +1,7 @@
 **Version 2.0:**
+-sped up !sloppytoppy with caching
+
+**Version 2.0:**
 -sloppybot got a complete back end renovation:
     -now defined as a bot rather than client
     -!help now uses built in bot help functionality
