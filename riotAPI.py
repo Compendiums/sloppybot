@@ -2,6 +2,7 @@ from settings import RIOT_API_KEY, URL, VERSION, REGION, QUEUE_ID
 from datetime import datetime #figure out how to import just the one function you need
 import utils
 import requests
+from functools import lru_cache
 
 
 def riotRequest(region,url,version,queryval):
@@ -14,6 +15,7 @@ def riotRequest(region,url,version,queryval):
     #print(response.json())
     return response.json()
 
+@lru_cache(100)
 def clashStats(teamid):
     #run requests, compile the info
     clash_team = riotRequest('north_america', 'clash_by_team', 'clash', teamid)
