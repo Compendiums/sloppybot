@@ -3,3 +3,5 @@ notes.txt
 helptext.txt
 /codearchive
 /sloppybot_timing
+/__pycache__
+testing.py

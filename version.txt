@@ -1,3 +1,13 @@
+**Version 2.2:**
+-use !summoner <summoner name> to get a concise rundown of a summoner
+    -for summoner names with two words, use quotes i.e. "Meme weaver"
+    -its a work in progress
+    -still pretty buggy due to riot's api request limits
+-use !clashStats <summoner name> to get a rundown of an opposing clash team
+    -the summoner can be any member of the team
+    -for summoner names with two words, use quotes i.e. "Meme weaver"
+    -only works for active clash teams
+
 **Version 2.1:**
 -sped up !sloppytoppy with caching
 
@@ -9,10 +19,7 @@
 -sloppybot got a new server with quadruple the specs
 
 **What's coming for the future:**
--speed up !sloppytoppy command
--error handling (Riot's APIs have been failing a lot recently :/)
+-error handling (Riot's APIs have been failing a lot recently)
 -improve formatting of !sloppytoppy output
--add command to get a rundown of opposing team
--add command which accepts requests for new commands
 
 Hit me up with any command requests
